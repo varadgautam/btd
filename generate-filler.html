@@ -1,0 +1,333 @@
+<html>
+<script>
+    var MAGIC = 256
+
+        function populate() {
+            var opt_list = ["ELITECORE TECHNOLOGIES PVT. LTD., AHMEDABAD",
+                "INFIBEAM, AHMEDABAD",
+                "SHREE CEMENTS LIMITED, AJMER",
+                "AMUL DAIRY (K.D.C.M.P.U. LTD)., ANAND",
+                "IDMC LTD., ANAND",
+                "NATIONAL ALUMINIUM COMPANY LIMITED (POWER PLANT), ANGUL",
+                "NATIONAL ALUMINIUM COMPANY LIMITED (SMELTER PLANT), ANGUL",
+                "AURANGABAD ELECTRICALS, AURANGABAD",
+                "SAVERA PRESS COMPS. PVT LTD, AURANGABAD",
+                "SHREE PRESSINGS, AURANGABAD",
+                "SIEMENS, AURANGABAD",
+                "NATIONAL THERMAL POWER CORPORATION (NTPC), BADARPUR(DELHI)",
+                "GAS TURBINE RESEARCH ESTABLISHMENT, BANGALORE",
+                "HINDUSTAN AERONAUTICS LTD (ENGINE DIVISION), BANGALORE",
+                "HINDUSTAN AERONAUTICS LTD (HELICOPTER DIVISION), BANGALORE",
+                "JANGRAHA, BANGALORE",
+                "KRILOSKAR ELECTRIC COMPANY, BANGALORE",
+                "NASH INDUSTRIES, BANGALORE",
+                "NVIDIA GRAPHICS, BANGALORE",
+                "RAILTEL CORPORATION, BANGALORE",
+                "STRAND LIFE SCIENCE (P) LTD., BANGALORE",
+                "TATA HITACHI CONSTRUCTION MACHINERY CO. LTD, BANGALORE",
+                "TOYOTA KIRLOSKAR MOTOR PRIVATE LIMITED , BANGALORE",
+                "TUNE PETROL MEDIA LABS PVT. LTD., BANGALORE",
+                "UTTHUNGA TECHNOLOGIES PVT LTD, BANGALORE",
+                "YUKEN INDIA LTD., BANGALORE",
+                "STEEL AUTHORITY OF INDIA, BHADRAVATHI(SHIMOGA)",
+                "THE MYSORE PAPER MILLS LTD., BHADRAVATHI(SHIMOGA)",
+                "BHILAI STEEL PLANT, BHILAI",
+                "BHARAT HEAVY ELECTRICALS LTD (BHEL), BHOPAL",
+                "SANFIELD INDIA LTD, BHOPAL",
+                "THE INSTITUTE OF MINERALS AND MATERIALS TECHNOLOGY, BHUBANESWAR",
+                "BOKARO STEEL PLANT, BOKARO",
+                "AWARPUR CEMENT WORKS, CHANDRAPUR(MAHARASHATRA)",
+                "CENTRAL ELECTRONICS ENGINEERING RESEARCH INSTITUTE (CEERI), CHENNAI",
+                "CENTRAL LEATHER RESEARCH INSTITUTE (CLRI), CHENNAI",
+                "CENTRAL SCIENTIFIC INSTRUMENTS ORGANIZATION (CSIO), CHENNAI",
+                "INDIAN BANK, CHENNAI",
+                "MEDICAL RESEARCH FOUNDATION, CHENNAI",
+                "NATIONAL METALLURGICAL LABORATORY (NML), CHENNAI",
+                "RANE NSK STEERING SYSTEMS LTD., CHENNAI",
+                "RANE TRW STEERING SYSTEMS LIMITED, CHENNAI",
+                "THE MADRAS MEDICAL MISSION, CHENNAI",
+                "WHEELS INDIA LTD., CHENNAI",
+                "ADITYA CEMENT WORKS, CHITTORGARH",
+                "HINDUSTAN ZINC LTD., CHITTORGARH",
+                "ADANI POWER LIMITED, TIRORA (MH)",
+                "CPC PVT LIMITED, COIMBATORE",
+                "DALMIA CEMENT (B) LTD., DALMIAPURAM",
+                "NATIONAL ALUMINIUM COMPANY LIMITED (NALCO), DAMANJODI",
+                "INDIAN INSTITUTE OF REMOTE SENSING, DEHRADUN",
+                "WADIA INSTITUTE OF HIMALAYAN GEOLOGY, DEHRADUN",
+                " ARMY BASE WORKSHOP, DELHI",
+                "CENTER OF EXELLENCE IN TELECOMMUNICATION, DELHI",
+                "CENTRAL POLLUTION CONTROL BOARD, DELHI",
+                "EDUPRISTINE, DELHI",
+                "GMR VARALAKSHMI FOUNDATION, DELHI",
+                "HINDUSTAN PREFAB LIMITED, DELHI",
+                "INDIAN RED CROSS SOCIETY BLOOD BANK, DELHI",
+                "MOSER BAER INDIA LIMITED, DELHI",
+                "MOSERBAER TRUST, DELHI",
+                "WONE MANAGEMENT SYSTEMS PVT LTD, DELHI",
+                "DURGAPUR STEEL PLANT, DURGAPUR",
+                "ESCORTS, FARIDABAD",
+                "R P ROLLING MILLS, FARIDABAD",
+                "SUPERSEALS INDIA LTD., FARIDABAD",
+                "BHASKARACHARYA INSTITUTE FOR SPACE APPLICATIONS AND GEOINFORMATIC (BISAG), GANDHINAGAR",
+                "GAUHATI REFINERY, GAUHATI",
+                "SHRIRAM PISTONS AND RINGS LTD, GHAZIABAD",
+                "BOSCH , GOA",
+                "CARTINI INDIA LTD., GOA",
+                "CG PPI ADHENSIVE PRODUCTS LTD, GOA",
+                "CHOWGULE & CO. LTD., GOA",
+                "ENTERTAINMENT SOCIETY OF GOA, GOA",
+                "ESS DEE ALUMINIM LTD., GOA",
+                "FLEX ART FOIL LTD., GOA",
+                "FUNSKOOL (INDIA) LTD., GOA",
+                "GOA SHIPYARD LTD., GOA",
+                "HIMIGIRI CASTINGS P LTD, GOA",
+                "MAHAVIR PLASTIC IND, GOA",
+                "MARPOL PVT LTD, GOA",
+                "NATIONAL CENTRE FOR ANTARTIC AND OCEAN RESEARCH (NCAOR), GOA",
+                "ORCHID BIO MEDICAL SYSTEMS, GOA",
+                "POWER ENGINEERING INDIA PVT. LTD., GOA",
+                "PUTZMEISTER, GOA",
+                "RHEA DISTILLERIES, GOA",
+                "SIEMENS, GOA",
+                "SMART LINK NETWORK SYSTEMS, GOA",
+                "VARUN BEVERAGES LTD., GOA",
+                "ZUARI INDUSTRIES LTD., GOA",
+                "GAYATHRI GOUP, GOTLAM",
+                "GAS AUTHORITY OF INDIA LIMITED , GUNA (MP)",
+                "TIRUMALA MILK PRODUCTS, GUNGAL (AP)",
+                "EIH LIMITED, GURGAON",
+                "PRECISION TECH ENTERPRISES, GURGAON",
+                "RITES LTD, GURGAON",
+                "ADITYA BIRLA INSULATORS, HOOGLY (KOLKATA)",
+                "AAROGYASRI HEALTH CARE TRUST, JAMBAGH, HYDERABAD",
+                "AAROGYASRI HEALTH CARE TRUST, JUBILEE HILLS, HYDERABAD",
+                "ANDHRA PRADESH STATE ROAD TRANSPORT CORPORATION, HYDERABAD",
+                "BHARAT DYNAMICS LTD., HYDERABAD",
+                "CMC LTD, HYDERABAD",
+                "GMR VARALAKSHMI FOUNDATION, HYDERABAD",
+                "HBL POWER SYSTEMS LTD., HYDERABAD",
+                "HETERO DRUGS LTD., HYDERABAD",
+                "HMT BEARINGS LTD., HYDERABAD",
+                "L.V.PRASAD EYE INSTITUTE, HYDERABAD",
+                "LARSEN & TOURBO, HYDERABAD",
+                "LEXICON INFOTECH LTD, HYDERABAD",
+                "MANVISION CONSULTING PRIVATE LIMITED, HYDERABAD",
+                "MAUKA TECHNOLOGIES PVT. LTD., HYDERABAD",
+                "MOLD-TEK TECHNOLOGIES LTD., HYDERABAD",
+                "NAVANIDHI ELECTRONICS PVT. LTD., HYDERABAD",
+                "NCCCM, HYDERABAD",
+                "SERVOMAX INDIA PVT. LTD., HYDERABAD",
+                "SMARTWYN SOLUTIONS PVT. LTD., HYDERABAD",
+                "TOPTALENT.IN, HYDERABAD",
+                "IMPETUS INFOTECH (INDIA) PVT. LTD., INDORE",
+                "KEC INTERNATIONAL LIMITED, JABALPUR",
+                "GUJRAT CEMENT WORKS, JAFFERABAD",
+                "INDO GULF FERTILIZERS, JAGDISHPUR (UP)",
+                "ANJANI CEMENT, JAGGAYAPET",
+                "MADRAS CEMENTS, JAGGAYAPET",
+                "AMOL PHARMACEUTICALS PVT LTD, JAIPUR",
+                "JAIPUR DEVELOPMENT AUTHORITY, JAIPUR",
+                "LINUX WORLD, JAIPUR",
+                "MAYUR UNIQUOTERS PVT LTD, JAIPUR",
+                "BRAKES FOUNDATION MANUFACTURING LTD, JALGAON",
+                "CROMPTON GREAVES LTD., JALGAON",
+                "ORIENT CEMENT, JALGAON",
+                "RAYMOND LTD., JALGAON",
+                "THE SUPREME INDUSTRIES, JALGAON",
+                "ESSAR POWER, JAMNAGAR",
+                "TATA STEEL, JAMSHEDPUR",
+                "BHARAT HEAVY ELECTRICALS LTD (BHEL), JHANSI",
+                "BIRLA WHITE CEMENTS, JODHPUR",
+                "GALAXY DATA PROCESSING CENTRE, JODHPUR",
+                "TAMILNADU NEWSPRINTS AND PAPERS LTD (TNPL), KAGITHAPURAM (TN)",
+                "INDIRA GANDHI CENTRE FOR ATOMIC RESEARCH (IGCAR), KALPAKKAM",
+                "MADRAS ATOMIC POWER PLANT, KALPAKKAM",
+                "CARBORUNDUM UNIVERSAL LTD., KOCHI",
+                "HINDUSTAN PREFAB LTD.,, KOCHI",
+                "KIRLOSKAR OIL ENGINE LIMITED, KOLHAPUR",
+                "MENON PISTONS LTD., KOLHAPUR",
+                "SHRIRAM FOUNDRY LTD, KOLHAPUR",
+                "DEVELOPMENT CONSULTANTS PRIVATE LIMITED, KOLKATA",
+                "HEDGE QUANTS, KOLKATA",
+                "LANDIS+GYR, KOLKATA",
+                "TEGA INDUSTRIES, KOLKATA",
+                "TEXMACO LTD., KOLKATA",
+                "HINDUSTAN AERONAUTICS LIMITED, ENGINE DIVISION, KORAPUT",
+                "MITTAL PIGMENT PVT LTD , KOTA",
+                "THE SINGARENI COLLIERIES COMPANY LTD., KOTHAGUDAM",
+                "ALP NISHIKAWA CO LTD, LALRU",
+                "BIOTECH PARK, LUCKNOW",
+                "ESSAR POWER, MAHAN, MAHAN (MP)",
+                "LARSEN & TOUBRO LIMITED (L&T) INFOTECH LTD., MAHAPE (MAHARASHTRA)",
+                "RAJSHREE CEMENT, MALKHED (MAHARASHTRA)",
+                "HEG LIMITED, MANDIDEEP (MP)",
+                "EIH LIMITED, MANESAR",
+                "HONDA MOTORS, MANESAR",
+                "ASTECH SYSTEMS, MUMBAI",
+                "ATOMIC ENERGY REGULATORY BOARD (AERB), MUMBAI",
+                "BEN LINE AGENCIES (INDIA) PVT. LTD., MUMBAI",
+                "BHABHA ATOMIC RESEARCH CENTRE (BARC), MUMBAI",
+                "CENTURY RAYON, MUMBAI",
+                "CMC LTD, MUMBAI",
+                "CRISIL HOUSE , MUMBAI",
+                "FACT VENTURES PTE LTD., MUMBAI",
+                "GREENPEACE INDIA, MUMBAI",
+                "HINDUSTAN PETROLEUM CORPORATION LIMITED (HPCL), MUMBAI",
+                "HOMI BHABHA CENTRE FOR SCIENCE EDUCATION (TIFR), MUMBAI",
+                "IT RELIANCE BIG ENTERTAINMENT, MUMBAI",
+                "KOTAK MAHINDRA BANK, MUMBAI",
+                "LARSEN & TOUBRO LIMITED, MUMBAI",
+                "LARSEN & TOUBRO LIMITED [ENGG & CONST DIVN], MUMBAI",
+                "MUMBAI RAIL VIKAS CORPORATION LTD., MUMBAI",
+                "ORIENT ENTERPRISES (PHOENIX INTERPLAST), MUMBAI",
+                "PHYZOK LEARNING SOLUTIONS LLP, MUMBAI",
+                "PRAMA INSTRUMENTS PRIVATE LIMITED, MUMBAI",
+                "PRS PERMACEL PVT LTD, MUMBAI",
+                "RELIANCE COMMUNICATIONS LTD., MUMBAI",
+                "RELIANCE INFRASTRUCTURE LIMITED, MUMBAI",
+                "RELIANCE JIO(RJIL), MUMBAI",
+                "TOY BANK, MUMBAI",
+                "YRALS DIGITAL INDIA PVT LTD, MUMBAI",
+                "ADANI POWER, MUNDRA (GUJARAT)",
+                "CENTRAL PUBLIC WORKS DEPARTMENT (CPWD), MUSSOORIE",
+                "RANE (MADRAS) LIMITED (RML) , MYSORE",
+                "WUERTH ELECKTRONIK, MYSORE",
+                "GRASIM CHEMICALS, NAGDA",
+                "GRASIM INDUSTRIES, NAGDA",
+                "GLOBAL LOGIC, NAGPUR",
+                "INDO RAMA SYNTHETICS INDIA LTD, NAGPUR",
+                "METAL FAB HIGH TECH PVT LTD., NAGPUR",
+                "TECHTURE STRUCTURES PVT LTD., NAGPUR",
+                "VISTA SOFTWARES, NAGPUR",
+                "WINDALSOPERATION, NAGPUR",
+                "ATLAS COPCO, NASHIK",
+                "MAHINDAR & MAHINDRA LTD., NASHIK",
+                "MS SWITCH GEAR PVT LTD, NASHIK",
+                "VIKRAM CEMENT WORKS, NEEMUCH(MP)",
+                "GLOBAL AUTOTECH, NOIDA",
+                "HALDIRAM SNACKS PVT LTD, NOIDA",
+                "HSCC (INDIA) LTD., NOIDA",
+                "BIRLA MUSEUM, PILANI",
+                "CENTRAL ELECTRONICS ENGINEERING RESEARCH INSTITUTE, PILANI",
+                "MAHLE ENGINE COMPONENTS INDIA PVT. LTD., PITHAMPUR",
+                "NEOCORP INTERNATIONAL LIMITED, PITHAMPUR",
+                "EID PARRY INDIA LIMITED, PUGALUR (TN)",
+                "ARMY INSTITUTE OF TECHNOLOGY, PUNE",
+                "BHARAT FORGE LTD., MUNDHWA, PUNE",
+                "CUMMINS INDIA LTD., PUNE",
+                "DIESEL LOCO SHED,CENTRAL RAILWAY, PUNE",
+                "DIVGI-WARNER LTD., PUNE",
+                "INTELLIGENCE PLUS, PUNE",
+                "INTER-UNIVERSITY CENTRE FOR ASTRONOMY AND ASTROPHYSICS (IUCCA), PUNE",
+                "KIRLOSKAR PNEUMATIC COMPANY LIMITED, PUNE",
+                "MAPYN TECHNOLOGIES PVT LIMITED, PUNE",
+                "RENU ELECTRONICS PVT LTD, PUNE",
+                "TATA TECHNOLOGIES LIMITED, PUNE",
+                "THERMAX , PUNE",
+                "TRIVENI TURBINE LIMITED, PUNE",
+                "WMI KONECRANES INDIA LTD., PUNE",
+                "EICHER TRACTORS LIMITED, RAISEN (MP)",
+                "NATIONAL THERMAL POWER CORPORATION (NTPC), RAMAGUNDAM",
+                "THE SINGARENI COLLIERIES COMPANY LTD., RAMAGUNDAM",
+                "ADVANCE REGIONAL TELECOM TRAINING CENTRE (ARTTC), RANCHI",
+                "RAWAN CEMENT WORKS, RAWAN",
+                "REDDIPALAYAM CEMENT WORKS, REDDIPALAYAM(TN)",
+                "HINDALCO INDUSTRIES LIMITED, RENUKOOT",
+                "HINDALCO INDUSTRIES LIMITED, RENUSAGAR",
+                "NATIONAL INSTITUTE OF HYDROLOGY, ROORKEE",
+                "ROURKELA STEEL PLANT, ROURKELA",
+                "BHUSHAN STEEL LTD,SAHIBABAD, SAHIBABAD",
+                "ADANI POWER LIMITED, SAWAI MADHOPUR",
+                "HIRMI CEMENT WORKS, SIMGA(CHATTISGARH)",
+                "THE SIRPUR PAPER MILLS LTD., SIRPUR KAGHAZNAGAR",
+                "ULTRATECH CEMENT LIMITED, TADPATHRI",
+                "TARAPUR ATOMIC POWER STATION (TAPS), TARAPUR",
+                "BHARAT HEAVY ELECTRICALS LTD (BHEL), TRICHY",
+                "RANE TRW STEERING SYSTEMS LIMITED, (RTSSL), TRICHY",
+                "CENTRE FOR DEVELOPMENT OF IMAGING TECHNOLOGY (CDIT), TRIVANDRUM",
+                "HINDUSTAN PREFAB LIMITED, TRIVANDRUM",
+                "HLL LIFECARE LTD., AKKULAM, TRIVANDRUM",
+                "HLL LIFECARE LTD., TRIVANDRUM",
+                "LIPI DATA SYSTEMS LTD., UDAIPUR",
+                "GUJARAT STATE FERTILIZERS & CHEMICALS LTD., VADODRA",
+                "LARSEN & TOUBRO(L&T) IES, VADODRA",
+                "JSW STEEL, VIJAYANAGAR",
+                "EFFTRONICS SYSTEMS PVT. LTD., VIJAYAWADA",
+                "KANAKA DURGA AGRO OIL PRODUCTS LTD, VIJAYAWADA",
+                "VIJAYAWADA THERMAL POWER STATION(V.T.P.S.), VIJAYAWADA",
+                "JSW ENERGY, VIJAYANAGAR",
+                "SARDA METALS & ALLOYS, VIZAG",
+            ]
+            var tab = document.createElement('table');
+            tab.setAttribute('id', 'tabel');
+
+            var tbo = document.createElement('tbody');
+            var j = 1;
+            while (j < MAGIC) {
+                var choice = document.createElement("select");
+                var why_ = document.createElement("div");
+                var why_why = document.getElementById("better_way");
+                var i = 1;
+
+                choice.id = "choice" + j;
+                while (i < MAGIC) {
+                    var opt = document.createElement("option");
+                    opt.value = "pref" + i;
+                    opt.text = opt_list[i - 1];
+                    choice.add(opt, null);
+                    i++;
+                }
+                var row = document.createElement("tr");
+                var cell = document.createElement("td");
+                cell.appendChild(document.createTextNode(j));
+                row.appendChild(cell);
+                cell.appendChild(choice);
+                row.appendChild(cell);
+                tbo.appendChild(row);
+                tab.appendChild(tbo);
+                document.getElementById('tabel').appendChild(tab);
+                j++;
+            }
+        }
+
+        function build() {
+            var boxes = new Array();
+            var i = 1;
+            while (i < MAGIC) {
+                boxes.push(1 + document.getElementById("choice" + i).selectedIndex);
+                i++;
+            }
+            console.log(boxes.join(";"));
+            var strin = "function fill(ins){var choices = ins.split(\";\");var i = 1;var m = top.frames[\"congrats\"];while(i < 256){m.document.getElementsByName(\"pref\"+parseInt(choices[i-1]))[0].value = i; i++;}}; fill(\"" + boxes.join(";") + "\")";
+            document.getElementById("buildresult").appendChild(document.createTextNode(strin));
+        }
+</script>
+
+<body onload="populate()">
+    <p>Fill in your preferences</p>
+    <div id="tabel"></div>
+    <p>
+
+    </p>
+    <div id="buildresult"></div>
+    <p>
+
+    </p>
+    <button type="button" onclick="build()">Don't Panic</button>
+    
+    <p>Click ^ and paste whatever appears into a console (ctrl+shift+j in chrome) on the actual submission form.<br>
+
+      WARNING: This does not make any validations whatsoever. Please verify things
+      once before submitting.<br>
+      <br>
+      <br>
+      ...COFFEE-WARE<br>
+      <!--“THE COFFEE-WARE LICENSE”:
+      *<varadgautam@gmail.com> wrote this file. As long as you retain this notice you
+      * can do whatever you want with this stuff. If we meet some day, and you think
+      * this stuff is worth it, you can buy me a coffee in return.-->
+    </p>
+</body>
+
+</html>
