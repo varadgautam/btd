@@ -298,8 +298,8 @@
                 boxes.push(1 + document.getElementById("choice" + i).selectedIndex);
                 i++;
             }
-            console.log(boxes.join(";"));
-            var strin = "function fill(ins){var choices = ins.split(\";\");var i = 1;var m = top.frames[\"congrats\"];while(i < 256){m.document.getElementsByName(\"pref\"+parseInt(choices[i-1]))[0].value = i; i++;}}; fill(\"" + boxes.join(";") + "\")";
+            /* upstream:j.onchange() is badly written */
+            var strin = "function fill(ins){var choices = ins.split(\";\");var i = 1;var m = top.frames[\"congrats\"];while(i < 256){var j = m.document.getElementsByName(\"pref\"+parseInt(choices[i-1]))[0]; j.value = i; j.onchange(); i++;}}; fill(\"" + boxes.join(";") + "\")";
             document.getElementById("buildresult").appendChild(document.createTextNode(strin));
         }
 </script>
@@ -317,7 +317,9 @@
     <button type="button" onclick="build()">Don't Panic</button>
     
     <p>Click ^ and paste whatever appears into a console (ctrl+shift+j in chrome) on the actual submission form.<br>
-
+    
+       You may have to wait for a while for the page to fill.
+       <br>
       WARNING: This does not make any validations whatsoever. Please verify things
       once before submitting.<br>
       <br>
